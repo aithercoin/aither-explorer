@@ -24,7 +24,7 @@ echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.
 sudo apt-get update -y
 sudo apt-get install -y mongodb-org
 echo "use $MONGO_DB_NAME" > install-mongo.js
-echo 'db.createUser( { user: "$MONGO_DB_USER", pwd: "$MONGO_DB_PASS", roles: [ "readWrite" ] } )' >> install-mongo.js
+echo 'db.createUser( { user: "'$MONGO_DB_USER'", pwd: "'$MONGO_DB_PASS'", roles: [ "readWrite" ] } )' >> install-mongo.js
 echo 'exit' >> install-mongo.js
 mongo < install-mongo.js
 rm -f install-mongo.js
