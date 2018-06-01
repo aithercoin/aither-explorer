@@ -1,4 +1,4 @@
-!#/bin/sh
+#!/bin/sh
 read -e -p "Enter Website title (e.g. Iquidus) : " WEBSITE_TITLE
 read -e -p "Enter Website port (e.g. 3001) : " WEBSITE_PORT
 read -e -p "Enter Coin Name (e.g. Aither) : " COIN_NAME
