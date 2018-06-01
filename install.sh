@@ -47,5 +47,5 @@ sed -i -- 's/123gfjk3R3pCCVjHtbRde2s5kzdf233sa/$WALLET_PASS/g' settings.json
 echo ####################################################
 echo ####### Everything's ok ############################
 echo ####################################################
-echo "Please run `pm2 start bin/cluster` to run instance"
-echo "Please run `pm2 monit` to see the monitor"
+echo 'Please run `pm2 start bin/cluster` to run instance'
+echo 'Please run `pm2 monit` to see the monitor'
