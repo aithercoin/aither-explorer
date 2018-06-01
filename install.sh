@@ -1,5 +1,4 @@
 #!/bin/bash
-output "Make sure you double check before hitting enter! Only one shot at these!"
 read -e -p "Enter Website title (e.g. Iquidus) : " WEBSITE_TITLE
 read -e -p "Enter Website port (e.g. 3001) : " WEBSITE_PORT
 read -e -p "Enter Coin Name (e.g. Aither) : " COIN_NAME
@@ -34,16 +33,16 @@ echo ####################################################
 rm -f package-lock.json
 npm install --production
 cp settings.json.template settings.json
-sed -i -- 's/"title": "IQUIDUS"/"title": "$WEBSITE_TITLE"/g' settings.json
-sed -i -- 's/3001/$WEBSITE_PORT/g' settings.json
-sed -i -- 's/Darkcoin/$COIN_NAME/g' settings.json
-sed -i -- 's/DRK/$COIN_SYMBOL/g' settings.json
-sed -i -- 's/"user": "iquidus"/"user": "$MONGO_DB_USER"/g' settings.json
-sed -i -- 's/"password": "3xp!0reR"/"password": "$MONGO_DB_PASS"/g' settings.json
-sed -i -- 's/"database": "explorerdb"/"database": "$MONGO_DB_NAME"/g' settings.json
-sed -i -- 's/9332/$WALLET_PORT/g' settings.json
-sed -i -- 's/darkcoinrpc/$WALLET_USER/g' settings.json
-sed -i -- 's/123gfjk3R3pCCVjHtbRde2s5kzdf233sa/$WALLET_PASS/g' settings.json
+sed -i -- 's/"title": "IQUIDUS"/"title": "'$WEBSITE_TITLE'"/g' settings.json
+sed -i -- 's/3001/'$WEBSITE_PORT'/g' settings.json
+sed -i -- 's/Darkcoin/'$COIN_NAME'/g' settings.json
+sed -i -- 's/DRK/'$COIN_SYMBOL'/g' settings.json
+sed -i -- 's/"user": "iquidus"/"user": "'$MONGO_DB_USER'"/g' settings.json
+sed -i -- 's/"password": "3xp!0reR"/"password": "'$MONGO_DB_PASS'"/g' settings.json
+sed -i -- 's/"database": "explorerdb"/"database": "'$MONGO_DB_NAME'"/g' settings.json
+sed -i -- 's/9332/'$WALLET_PORT'/g' settings.json
+sed -i -- 's/darkcoinrpc/'$WALLET_USER'/g' settings.json
+sed -i -- 's/123gfjk3R3pCCVjHtbRde2s5kzdf233sa/'$WALLET_PASS'/g' settings.json
 echo ####################################################
 echo ####### Everything's ok ############################
 echo ####################################################
