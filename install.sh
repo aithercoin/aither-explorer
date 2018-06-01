@@ -30,18 +30,19 @@ rm -f install-mongo.js
 echo ####################################################
 echo ####### Install service ############################
 echo ####################################################
+rm -f package-lock.json
 npm install --production
 cp settings.json.template settings.json
-sed -i -- 's/"title": "IQUIDUS"/"title": "$WEBSITE_TITLE"/g'
-sed -i -- 's/3001/$WEBSITE_PORT/g'
-sed -i -- 's/Darkcoin/$COIN_NAME/g'
-sed -i -- 's/DRK/$COIN_SYMBOL/g'
-sed -i -- 's/"user": "iquidus"/"user": "$MONGO_DB_USER"/g'
-sed -i -- 's/"password": "3xp!0reR"/"password": "$MONGO_DB_PASS"/g'
-sed -i -- 's/"database": "explorerdb"/"database": "$MONGO_DB_NAME"/g'
-sed -i -- 's/9332/$WALLET_PORT/g'
-sed -i -- 's/darkcoinrpc/$WALLET_USER/g'
-sed -i -- 's/123gfjk3R3pCCVjHtbRde2s5kzdf233sa/$WALLET_PASS/g'
+sed -i -- 's/"title": "IQUIDUS"/"title": "$WEBSITE_TITLE"/g' settings.json
+sed -i -- 's/3001/$WEBSITE_PORT/g' settings.json
+sed -i -- 's/Darkcoin/$COIN_NAME/g' settings.json
+sed -i -- 's/DRK/$COIN_SYMBOL/g' settings.json
+sed -i -- 's/"user": "iquidus"/"user": "$MONGO_DB_USER"/g' settings.json
+sed -i -- 's/"password": "3xp!0reR"/"password": "$MONGO_DB_PASS"/g' settings.json
+sed -i -- 's/"database": "explorerdb"/"database": "$MONGO_DB_NAME"/g' settings.json
+sed -i -- 's/9332/$WALLET_PORT/g' settings.json
+sed -i -- 's/darkcoinrpc/$WALLET_USER/g' settings.json
+sed -i -- 's/123gfjk3R3pCCVjHtbRde2s5kzdf233sa/$WALLET_PASS/g' settings.json
 echo ####################################################
 echo ####### Everything's ok ############################
 echo ####################################################
