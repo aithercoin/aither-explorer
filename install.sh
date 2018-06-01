@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+output "Make sure you double check before hitting enter! Only one shot at these!"
 read -e -p "Enter Website title (e.g. Iquidus) : " WEBSITE_TITLE
 read -e -p "Enter Website port (e.g. 3001) : " WEBSITE_PORT
 read -e -p "Enter Coin Name (e.g. Aither) : " COIN_NAME
