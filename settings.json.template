@@ -5,7 +5,7 @@
 */
 {
   // name your instance!
-  "title": "IQUIDUS",
+  "title": "Aither Explorer",
 
   "address": "127.0.0.1:3001",
 
@@ -26,7 +26,7 @@
   //     Cerulean, Cosmo, Cyborg, Darkly, Flatly, Journal, Lumen, Paper,
   //     Readable, Sandstone, Simplex, Slate, Spacelab, Superhero, United, Yeti
   // theme (see /public/themes for available themes)
-  "theme": "Cyborg",
+  "theme": "Cerulean",
 
   // port to listen for requests on.
   "port" : 3001,
