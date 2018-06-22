@@ -34,7 +34,7 @@ body {
     background: rgba(255, 255, 255, 0.01);
 }
 
-.list-button button {
+.list-button button,.list-button a.btn {
     background: #2444d4;
     border: none;
     color: #fff;
