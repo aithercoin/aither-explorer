@@ -1,6 +1,7 @@
 body {
     background: #0e0e0e;
     color: #fff;
+    font-family: "Myriad Pro", sans-serif;
 }
 
 .search-form ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -26,6 +27,11 @@ body {
     padding: 45px 0;
 }
 
+.header {
+    background: url(../images/bg-header.png);
+    background-repeat: no-repeat;
+}
+
 .logo img {
     width: 136px;
 }
@@ -34,13 +40,25 @@ body {
     background: rgba(255, 255, 255, 0.01);
 }
 
-.list-button button,.list-button a.btn {
+.list-button a {
     background: #2444d4;
     border: none;
     color: #fff;
     border-radius: 4px;
-    padding: 2px 10px;
+    padding: 2px 15px 2px 10px;
+    position: relative;
     margin-left: 10px;
+}
+
+.list-button a::after {
+    background: #4c65ff;
+    width: 7px;
+    height: 100%;
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    border-radius: 0 5px 5px 0;
 }
 
 .top-header {
@@ -68,7 +86,7 @@ body {
     height: auto;
 }
 
-.nav > li > a:focus, .nav > li > a:hover {
+.nav > li > a:focus, .nav > li:hover > a, .nav > li.active > a {
     background-color: transparent;
     color: #fff;
 }
@@ -98,9 +116,9 @@ body {
 
 .search-form button {
     background: #000;
-    border: none;
     color: #fff;
     padding: 5px 25px;
+    border: 1px solid;
 }
 
 .data-item b {
@@ -113,15 +131,16 @@ body {
     font-size: 17px;
 }
 
-.list-transaction .panel-heading {
-    background: #3e3e3e;
+.panel-heading {
+    background: #3e3e3e !important;
+    border: 2px solid #2c2c2c !important;
 }
 
-.list-transaction .panel-heading h3 {
-    font-size: 17px;
+.panel-heading h3 {
+    font-size: 14px;
     margin: 0;
     font-weight: bold;
-    color: #6c6b6b;
+    color: #878787;
 }
 
 .filter {
@@ -142,19 +161,28 @@ body {
     float: left;
 }
 
-.list-transaction .panel {
+.panel {
     background: #272727;
+    border: 2px solid #2c2c2c !important;
 }
 
 .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
-    border: 1px solid #6c6b6b;
+    border: 1px solid #2c2c2c;
 }
 
-.list-transaction .panel-body {
+.table-hover > tbody > tr:hover {
+    background-color: transparent !important;
+}
+
+.panel thead {
+    background: #1e1e1e;
+}
+
+.panel .panel-body {
     padding: 0;
 }
 
-.table-striped > tbody > tr:nth-of-type(2n+1) {
+.table > tbody > tr:nth-of-type(2n+1) {
     background-color: #111111;
 }
 
@@ -162,21 +190,30 @@ body {
     padding: 50px;
 }
 
-.list-transaction .panel-footer {
+.panel .panel-footer {
     background: #272727;
     border: none;
 }
 
-.list-transaction .table {
-    border: 1px solid #6c6b6b;
+.panel .table {
+    border: 2px solid #2c2c2c;
     margin: 0;
+    width: 100% !important;
 }
 
-.list-transaction th {
+.panel th {
     text-align: center;
 }
 
-.copyright {
+div.dataTables_length label {
+    color: #6c6b6b;
+}
+
+div.dataTables_info {
+    color: #6c6b6b;
+}
+
+.copyright a {
     color: #6c6b6b;
 }
 
@@ -190,30 +227,18 @@ body {
     color: #6c6b6b;
 }
 
-.pagination li.disabled a {
-    color: #ffffff !important;
-    border-color: #6c6b6b;
-    background: #6c6b6b !important;
+.list-paging a {
+    color: #6c6b6b;
 }
 
-.pagination > .disabled > a, .pagination > .disabled > a:focus, .pagination > .disabled > a:hover, .pagination > .disabled > span, .pagination > .disabled > span:focus, .pagination > .disabled > span:hover {
-    border-color: #6c6b6b;
-}
-
-.pagination li.paginate_button.active, .pagination a:hover {
-    background: #319fd2 !important;
-    color: #fff !important;
-}
-
-.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
-    border-color: #319fd2;
-}
-
-.pagination > li > a, .pagination > li > span {
-    background: #0e0e0e;
+.list-paging a.active, .list-paging a:hover {
+    background: #319fd2;
     color: #fff;
-    padding: 6px 10px;
-    border-color: #0e0e0e;
+}
+
+.list-paging a.page-no {
+    color: #fff;
+    padding: 8px 10px;
 }
 
 .footer {
@@ -238,7 +263,36 @@ a {
     text-align: left;
 }
 
-
 label#lblBlockcount {
     margin-right: 5px;
+}
+
+.pagination > .disabled > a, .pagination > .disabled > a:focus, .pagination > .disabled > a:hover, .pagination > .disabled > span, .pagination > .disabled > span:focus, .pagination > .disabled > span:hover {
+    background-color: transparent;
+}
+
+.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.pagination > li > a, .pagination > li > span {
+    color: #6c6b6b;
+    background-color: transparent;
+    border: transparent;
+}
+
+.nav-tabs {
+    border: none;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    background-color: transparent;
+    border: 2px solid #2c2c2c;
+    border-bottom-color: transparent;
+}
+
+.nav-tabs > li > a:hover {
+    border-color: #2c2c2c;
 }
