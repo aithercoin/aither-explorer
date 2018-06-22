@@ -6,7 +6,7 @@ block content
     var colors = [ "#0071bc" ];
     $(document).ready(function(){
       function format_unixtime(unixtime) {
-        var a = new Date(unixtime*1000);  
+        var a = new Date(unixtime*1000);
         var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
         var year = a.getFullYear();
         var month = months[a.getMonth()];
@@ -27,11 +27,11 @@ block content
           min = '0' + min;
         if (sec < 10)
           sec = '0' + sec;
-        var time = date + suffix + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;   
+        var time = date + suffix + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
         return time;
       }
-      var rtable = $('#alerts-table').dataTable( {  
-        autoWidth: false,      
+      var rtable = $('#alerts-table').dataTable( {
+        autoWidth: false,
         searching: false,
         ordering: false,
         //responsive: true,
@@ -65,9 +65,16 @@ block content
         rtable.api().ajax.reload(null, false);
       }, 45000 );
     });
-  .col-xs-12.col-md-10.col-md-offset-1(style="margin-bottom: 5%")
-    table#alerts-table.table.table-striped.table-bordered
-      thead
-        th timestamp
-        th.hidden-xs txid
-        th amount
+  .list-transaction
+    .row
+      .col-xs-12
+        .panel
+          .panel-heading
+            h3 #{settings.locale.mv_latest_movement}
+          .panel-body
+            .table-responsive.text-center
+              table#alerts-table.table.table-striped.table-bordered
+                thead
+                  th timestamp
+                  th.hidden-xs txid
+                  th amount

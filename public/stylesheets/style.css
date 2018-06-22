@@ -230,11 +230,11 @@ a {
     color: white;
 }
 
-#recent-table_wrapper .row {
+.dataTables_wrapper .row {
     margin: 10px 0;
 }
 
-#recent-table_wrapper .row > .col-xs-6 {
+.dataTables_wrapper .row > .col-xs-6 {
     text-align: left;
 }
 

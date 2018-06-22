@@ -26,6 +26,9 @@
     "ex_supply": "Coin Supply",
     "ex_block": "Block",
 
+    // movement
+    "mv_latest_movement": "Latest Movement",
+
     // transaction view
     "tx_title": "Transaction Details",
     "tx_block_hash": "Block Hash",
